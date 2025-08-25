@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title">SnapTask | Support</title>
+  <meta name="description" content="SnapTask: Organize your tasks in a snap. Official support site.">
+  <meta name="apple-mobile-web-app-title" content="SnapTask">
+  <meta name="theme-color" content="#4f8cff">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root { 
+      color-scheme: light dark; 
+      --bg: #0b0b0c; 
+      --fg: #e9e9ea; 
+      --muted: #9ea0a6; 
+      --card: #151518; 
+      --accent: #4f8cff; 
+      --link: #4f8cff; 
+    }
+    @media (prefers-color-scheme: light) { 
+      :root { 
+        --bg: #ffffff; 
+        --fg: #111111; 
+        --muted: #5a5c63; 
+        --card: #f6f7f9; 
+        --accent: #2155ff; 
+        --link: #2155ff; 
+      } 
+    }
+    html, body { 
+      height: 100%; 
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--card);
+      margin-bottom: 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .logo h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .language-selector {
+      display: flex;
+      gap: 1rem;
+    }
+    .language-selector a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+    .language-selector a:hover {
+      background: var(--card);
+    }
+    .language-selector a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .screenshot {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .screenshot:hover {
+      transform: translateY(-5px);
+    }
+    .screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--card);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="logo">
+        <img src="assets/icon.png" alt="SnapTask">
+        <h1>SnapTask</h1>
+      </a>
+      <nav class="language-selector">
+        <a href="#" class="active" data-lang="en">English</a>
+        <a href="#" data-lang="it">Italiano</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2 data-i18n="heroTitle">Support Center</h2>
+        <p data-i18n="heroSubtitle">Find answers to common questions or contact our support team for assistance with SnapTask.</p>
+      </section>
+
+      <section class="screenshots">
+        <div class="screenshot">
+          <img src="assets/Pagina 1.png" alt="SnapTask Screenshot 1">
+        </div>
+        <div class="screenshot">
+          <img src="assets/Pagina 2.png" alt="SnapTask Screenshot 2">
+        </div>
+        <div class="screenshot">
+          <img src="assets/Pagina 3.png" alt="SnapTask Screenshot 3">
+        </div>
+        <div class="screenshot">
+          <img src="assets/Pagina 4.png" alt="SnapTask Screenshot 4">
+        </div>
+      </section>
+
+      <section class="faq">
+        <h3 data-i18n="faqTitle">Frequently Asked Questions</h3>
+        <div class="faq-items">
+          <!-- FAQ items will be loaded dynamically -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Footer content will be loaded dynamically -->
+    </footer>
+  </div>
+
+  <script>
+    // Language management
+    let currentLang = localStorage.getItem('snaptask-lang') || 'en';
+    
+    // Load language content
+    async function loadLanguage(lang) {
+      try {
+        const response = await fetch(`${lang}.json`);
+        if (!response.ok) throw new Error('Language file not found');
+        
+        const data = await response.json();
+        currentLang = lang;
+        localStorage.setItem('snaptask-lang', lang);
+        document.documentElement.lang = lang;
+        
+        // Update UI
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (key in data) {
+            element.textContent = data[key];
+          }
+        });
+        
+        // Update FAQ items
+        const faqContainer = document.querySelector('.faq-items');
+        if (faqContainer && data.faqItems) {
+          faqContainer.innerHTML = data.faqItems.map((item, index) => `
+            <div class="faq-item">
+              <h4>${item.question}</h4>
+              <p>${item.answer}</p>
+            </div>
+          `).join('');
+        }
+        
+        // Update footer
+        const footer = document.querySelector('footer');
+        if (footer && data.footer) {
+          footer.innerHTML = `
+            <p>${data.footer.copyright}</p>
+            <nav>
+              ${data.footer.links.map(link => 
+                `<a href="${link.url}">${link.text}</a>`
+              ).join('')}
+            </nav>
+          `;
+        }
+        
+        // Update active language selector
+        document.querySelectorAll('.language-selector a').forEach(a => {
+          a.classList.toggle('active', a.dataset.lang === lang);
+        });
+        
+      } catch (error) {
+        console.error('Error loading language:', error);
+      }
+    }
+    
+    // Initialize language
+    document.addEventListener('DOMContentLoaded', () => {
+      loadLanguage(currentLang);
+      
+      // Set up language switcher
+      document.querySelectorAll('.language-selector a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadLanguage(link.dataset.lang);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

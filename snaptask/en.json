@@ -1,0 +1,27 @@
+{
+  "title": "SnapTask Support",
+  "heroTitle": "Support Center",
+  "heroSubtitle": "Find answers to common questions or contact our support team for assistance with SnapTask.",
+  "faqTitle": "Frequently Asked Questions",
+  "faqItems": [
+    {
+      "question": "How do I create a new task?",
+      "answer": "To create a new task, tap the + button at the bottom of the screen and enter your task details."
+    },
+    {
+      "question": "How can I set a reminder?",
+      "answer": "When creating or editing a task, tap the calendar icon to set a reminder date and time."
+    },
+    {
+      "question": "How do I share a task?",
+      "answer": "Long-press on a task and select 'Share' from the menu that appears."
+    }
+  ],
+  "footer": {
+    "copyright": "© 2024 SnapTask. All rights reserved.",
+    "links": [
+      { "text": "Privacy Policy", "url": "privacy" },
+      { "text": "Support", "url": "support" }
+    ]
+  }
+}
