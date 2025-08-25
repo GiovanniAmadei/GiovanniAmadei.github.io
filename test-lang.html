@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language File Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .success { background-color: #e6f7e6; border-color: #4CAF50; }
+        .error { background-color: #ffebee; border-color: #f44336; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Language File Accessibility Test</h1>
+    <div id="test-en" class="test">
+        <h3>Testing English language file (en.json):</h3>
+        <div id="en-result">Testing...</div>
+        <pre id="en-content"></pre>
+    </div>
+    
+    <div id="test-it" class="test">
+        <h3>Testing Italian language file (it.json):</h3>
+        <div id="it-result">Testing...</div>
+        <pre id="it-content"></pre>
+    </div>
+
+    <script>
+        async function testLanguageFile(lang) {
+            const resultEl = document.getElementById(`${lang}-result`);
+            const contentEl = document.getElementById(`${lang}-content`);
+            const testEl = document.getElementById(`test-${lang}`);
+            
+            try {
+                // Try with root path first
+                let response = await fetch(`/${lang}.json`);
+                
+                // If not found, try with full path
+                if (!response.ok) {
+                    response = await fetch(`/GiovanniAmadei.github.io/${lang}.json`);
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                resultEl.textContent = '✅ Successfully loaded!';
+                contentEl.textContent = JSON.stringify(data, null, 2);
+                testEl.classList.add('success');
+                
+                return data;
+                
+            } catch (error) {
+                resultEl.textContent = `❌ Error: ${error.message}`;
+                contentEl.textContent = 'Could not load language file';
+                testEl.classList.add('error');
+                console.error(`Error loading ${lang}.json:`, error);
+                return null;
+            }
+        }
+
+        // Run tests when the page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            await testLanguageFile('en');
+            await testLanguageFile('it');
+        });
+    </script>
+</body>
+</html>

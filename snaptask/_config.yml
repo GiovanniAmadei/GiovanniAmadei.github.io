@@ -1,0 +1,11 @@
+# Disable Jekyll processing
+safe: true
+include: [".nojekyll"]
+
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

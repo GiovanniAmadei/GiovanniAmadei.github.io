@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Test</title>
+</head>
+<body>
+    <h1>File Access Test</h1>
+    <div id="output">Testing file access...</div>
+    
+    <script>
+        async function testFileAccess() {
+            const output = document.getElementById('output');
+            
+            try {
+                // Test access to language files
+                const files = ['en.json', 'it.json'];
+                let results = [];
+                
+                for (const file of files) {
+                    try {
+                        const response = await fetch(file);
+                        if (response.ok) {
+                            results.push(`${file}: Found and accessible`);
+                        } else {
+                            results.push(`${file}: Error ${response.status} - ${response.statusText}`);
+                        }
+                    } catch (error) {
+                        results.push(`${file}: ${error.message}`);
+                    }
+                }
+                
+                output.innerHTML = results.join('<br>');
+                
+            } catch (error) {
+                output.innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        // Run the test when the page loads
+        testFileAccess();
+    </script>
+</body>
+</html>

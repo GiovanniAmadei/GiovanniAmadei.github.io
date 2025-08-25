@@ -176,48 +176,81 @@
     // Language management
     let currentLang = localStorage.getItem('snaptask-lang') || 'en';
     
+    // Default English content as fallback
+    const defaultContent = {
+      title: "SnapTask Support",
+      heroTitle: "Support Center",
+      heroSubtitle: "Find answers to common questions or contact our support team for assistance with SnapTask.",
+      faqTitle: "Frequently Asked Questions",
+      faqItems: [
+        {"question": "How do I create a new task?", "answer": "To create a new task, tap the + button at the bottom of the screen and enter your task details."},
+        {"question": "How can I set a reminder?", "answer": "When creating or editing a task, tap the calendar icon to set a reminder date and time."},
+        {"question": "How do I share a task?", "answer": "Long-press on a task and select 'Share' from the menu that appears."}
+      ],
+      footer: {
+        copyright: "© 2024 SnapTask. All rights reserved.",
+        links: [
+          { "text": "Privacy Policy", "url": "privacy" },
+          { "text": "Support", "url": "support" }
+        ]
+      }
+    };
+    
+    // Update UI with content
+    function updateUI(data) {
+      if (!data) return;
+      
+      document.documentElement.lang = currentLang;
+      
+      // Update text elements
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (key in data) {
+          element.textContent = data[key];
+        }
+      });
+      
+      // Update FAQ items
+      const faqContainer = document.querySelector('.faq-items');
+      if (faqContainer && data.faqItems) {
+        faqContainer.innerHTML = data.faqItems.map(item => `
+          <div class="faq-item">
+            <h4>${item.question}</h4>
+            <p>${item.answer}</p>
+          </div>
+        `).join('');
+      }
+      
+      // Update footer
+      const footer = document.querySelector('footer');
+      if (footer && data.footer) {
+        footer.innerHTML = `
+          <p>${data.footer.copyright}</p>
+          <nav>
+            ${data.footer.links.map(link => 
+              `<a href="${link.url}">${link.text}</a>`
+            ).join('')}
+          </nav>
+        `;
+      }
+    }
+    
     // Load language content
     async function loadLanguage(lang) {
       try {
-        // Use the correct path for language files
-        const response = await fetch(`/snaptask/${lang}.json`);
-        if (!response.ok) throw new Error('Language file not found');
-        
-        const data = await response.json();
+        // First set the language to show something immediately
         currentLang = lang;
         localStorage.setItem('snaptask-lang', lang);
-        document.documentElement.lang = lang;
         
-        // Update UI
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-          const key = element.getAttribute('data-i18n');
-          if (key in data) {
-            element.textContent = data[key];
-          }
-        });
-        
-        // Update FAQ items
-        const faqContainer = document.querySelector('.faq-items');
-        if (faqContainer && data.faqItems) {
-          faqContainer.innerHTML = data.faqItems.map((item, index) => `
-            <div class="faq-item">
-              <h4>${item.question}</h4>
-              <p>${item.answer}</p>
-            </div>
-          `).join('');
-        }
-        
-        // Update footer
-        const footer = document.querySelector('footer');
-        if (footer && data.footer) {
-          footer.innerHTML = `
-            <p>${data.footer.copyright}</p>
-            <nav>
-              ${data.footer.links.map(link => 
-                `<a href="${link.url}">${link.text}</a>`
-              ).join('')}
-            </nav>
-          `;
+        // Try to load the language file with full path
+        try {
+          const response = await fetch(`https://giovanniamadei.github.io/snaptask/${lang}.json`);
+          if (!response.ok) throw new Error('Language file not found');
+          const data = await response.json();
+          updateUI(data);
+        } catch (error) {
+          console.error('Error loading language file, falling back to English:', error);
+          updateUI(defaultContent);
         }
         
         // Update active language selector

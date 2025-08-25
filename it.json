@@ -1,0 +1,27 @@
+{
+  "title": "Supporto SnapTask",
+  "heroTitle": "Centro Assistenza",
+  "heroSubtitle": "Trova le risposte alle domande più comuni o contatta il nostro team di supporto per assistenza con SnapTask.",
+  "faqTitle": "Domande Frequenti",
+  "faqItems": [
+    {
+      "question": "Come creo una nuova attività?",
+      "answer": "Per creare una nuova attività, tocca il pulsante + in basso allo schermo e inserisci i dettagli dell'attività."
+    },
+    {
+      "question": "Come posso impostare un promemoria?",
+      "answer": "Quando crei o modifichi un'attività, tocca l'icona del calendario per impostare una data e un'ora di promemoria."
+    },
+    {
+      "question": "Come posso condividere un'attività?",
+      "answer": "Tieni premuta un'attività e seleziona 'Condividi' dal menu che appare."
+    }
+  ],
+  "footer": {
+    "copyright": "© 2024 SnapTask. Tutti i diritti riservati.",
+    "links": [
+      { "text": "Privacy Policy", "url": "privacy" },
+      { "text": "Supporto", "url": "supporto" }
+    ]
+  }
+}
