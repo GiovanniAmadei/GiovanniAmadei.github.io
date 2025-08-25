@@ -1,0 +1,40 @@
+# Configuration for GitHub Pages
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://giovanniamadei.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+
+title: SnapTask Support
+description: >- # this means to ignore newlines until "baseurl:"
+  Support and documentation for SnapTask - Organize your tasks in a snap
+
+# the subpath to your github page (optional)
+baseurl: "/" # the subpath of your site, e.g. /blog
+
+# the base hostname & protocol for your site
+url: "https://giovanniamadei.github.io"
+
+# The following are required for the GitHub Pages gem
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+theme: jekyll-theme-cayman
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor
+
+# Add your plugins here
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

@@ -179,7 +179,8 @@
     // Load language content
     async function loadLanguage(lang) {
       try {
-        const response = await fetch(`${lang}.json`);
+        // Use the correct path for language files
+        const response = await fetch(`/snaptask/${lang}.json`);
         if (!response.ok) throw new Error('Language file not found');
         
         const data = await response.json();
