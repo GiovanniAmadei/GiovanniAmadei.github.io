@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnapTask — Informativa sulla Privacy</title>
+  <meta name="description" content="Informativa sulla privacy per l'app SnapTask.">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root { color-scheme: light dark; --bg:#0b0b0c; --fg:#e9e9ea; --muted:#9ea0a6; --card:#151518; --accent:#4f8cff; --link:#4f8cff; }
+    @media (prefers-color-scheme: light) { :root { --bg:#ffffff; --fg:#111111; --muted:#5a5c63; --card:#f6f7f9; --accent:#2155ff; --link:#2155ff; } }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--fg); }
+    .container { max-width:900px; margin:0 auto; padding:32px 20px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    nav a { color:var(--link); text-decoration:none; margin-left:16px; }
+    nav a:hover { text-decoration:underline; }
+    h1 { margin-top:32px; }
+    .muted { color:var(--muted); }
+    .card { background:var(--card); border-radius:14px; padding:20px; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="/assets/icon.png" alt="SnapTask" width="28" height="28" style="border-radius:8px; background:#ddd;">
+        <strong>SnapTask</strong>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/supporto">Supporto</a>
+        <a href="/privacy">Privacy</a>
+        <span style="margin-left:16px; color:var(--muted)">IT · <a href="/en/privacy">EN</a></span>
+      </nav>
+    </header>
+
+    <h1>Informativa sulla Privacy</h1>
+    <p class="muted">Ultimo aggiornamento: <span id="date"></span></p>
+    <div class="card">
+      <p>SnapTask tiene alla tua privacy. L'app non raccoglie dati personali senza il tuo consenso.</p>
+      <h2>Dati raccolti</h2>
+      <p>I tuoi dati delle attività restano sul dispositivo, salvo funzioni esplicitamente abilitate da te (es. backup iCloud di sistema).</p>
+      <h2>Analytics e tracking</h2>
+      <p>Attualmente non utilizziamo strumenti di tracciamento di terze parti all'interno dell'app.</p>
+      <h2>Contatti</h2>
+      <p>Per domande sulla privacy scrivi a <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a>.</p>
+    </div>
+
+    <p class="muted">Torna a <a href="/">Home</a> o visita la pagina di <a href="/supporto">Supporto</a>.</p>
+  </div>
+  <script>
+    document.getElementById('date').textContent = new Date().toLocaleDateString('it-IT');
+  </script>
+</body>
+</html>
+
+
