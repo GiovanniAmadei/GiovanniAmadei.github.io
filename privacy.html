@@ -6,6 +6,7 @@
   <title>SnapTask | Informativa sulla Privacy</title>
   <meta name="description" content="Informativa sulla privacy per l'app SnapTask.">
   <link rel="icon" href="favicon.ico">
+  <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID_HERE">
   <style>
     :root { color-scheme: light dark; --bg:#0b0b0c; --fg:#e9e9ea; --muted:#9ea0a6; --card:#151518; --accent:#4f8cff; --link:#4f8cff; }
     @media (prefers-color-scheme: light) { :root { --bg:#ffffff; --fg:#111111; --muted:#5a5c63; --card:#f6f7f9; --accent:#2155ff; --link:#2155ff; } }
@@ -17,6 +18,13 @@
     h1 { margin-top:32px; }
     .muted { color:var(--muted); }
     .card { background:var(--card); border-radius:14px; padding:20px; margin-top:20px; }
+    details { margin:10px 0; }
+    details summary { cursor:pointer; padding:8px 0; font-weight:600; }
+    details summary:hover { color:var(--accent); }
+    details p, details ul { margin:12px 0; line-height:1.6; }
+    details h3 { margin:20px 0 10px; color:var(--accent); }
+    details ul { padding-left:20px; }
+    details li { margin:8px 0; }
   </style>
 </head>
 <body>
@@ -36,20 +44,181 @@
 
     <h1>Informativa sulla Privacy</h1>
     <p class="muted">Ultimo aggiornamento: <span id="date"></span></p>
+    
     <div class="card">
+      <h2>Panoramica</h2>
       <p>SnapTask tiene alla tua privacy. L'app non raccoglie dati personali senza il tuo consenso.</p>
-      <h2>Dati raccolti</h2>
-      <p>I tuoi dati delle attività restano sul dispositivo, salvo funzioni esplicitamente abilitate da te (es. backup iCloud di sistema).</p>
-      <h2>Analytics e tracking</h2>
-      <p>Attualmente non utilizziamo strumenti di tracciamento di terze parti all'interno dell'app.</p>
-      <h2>Contatti</h2>
-      <p>Per domande sulla privacy scrivi a <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a>.</p>
+      <p><strong>Data di efficacia:</strong> 19 Agosto 2025</p>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>1. Chi Siamo</strong></summary>
+        <p><strong>Titolare del trattamento:</strong> Giovanni Sebastiano Amadei (sviluppatore individuale)</p>
+        <p><strong>Indirizzo:</strong> Via Marino Venturi 33/1, Monte San Pietro (BO), Italia</p>
+        <p><strong>Email:</strong> <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a></p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>2. Ambito di Applicazione</strong></summary>
+        <p>Questa policy copre le informazioni processate da SnapTask e servizi correlati. Non copre servizi di terze parti che non controlliamo (Apple, Google, ecc.).</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>3. Dati che Processiamo</strong></summary>
+        <p>Minimizziamo la raccolta di dati.</p>
+        <h3>A. Forniti da Te</h3>
+        <ul>
+          <li><strong>Supporto/Contatto:</strong> la tua email e messaggio quando ci scrivi</li>
+          <li><strong>Feedback:</strong> nome opzionale (se fornito), testo del feedback, voti/mi piace, risposte</li>
+          <li><strong>Contenuto Utente nell'App:</strong> attività, note, foto, memo vocali e impostazioni. Memorizzati localmente di default; quando la sincronizzazione iCloud è abilitata, i dati sono nel tuo database iCloud privato sotto il tuo Apple ID</li>
+        </ul>
+        <h3>B. Raccolti Automaticamente</h3>
+        <ul>
+          <li><strong>Dispositivo/Utilizzo:</strong> modello dispositivo, versione OS/app, lingua, fuso orario, interazioni prodotto e metriche di performance</li>
+          <li><strong>Identificatori:</strong> IDFV e un ID anonimo in-app per deduplicazione</li>
+          <li><strong>Diagnostica:</strong> dati di crash/performance</li>
+          <li><strong>Acquisti:</strong> identificatori prodotto e stato transazione via StoreKit</li>
+          <li><strong>Posizione approssimativa:</strong> solo se necessaria per funzionalità di localizzazione/mappa che usi</li>
+        </ul>
+        <h3>C. Da Integrazioni (Opzionali)</h3>
+        <ul>
+          <li><strong>CloudKit (Apple):</strong> sincronizzazione dei tuoi dati al tuo iCloud privato</li>
+          <li><strong>StoreKit:</strong> gestione acquisti/sottoscrizioni</li>
+          <li><strong>Firebase/Firestore (Google):</strong> memorizzazione feedback ed eventi analitici interni limitati</li>
+          <li><strong>Calendari:</strong> Apple/Google Calendar se lo colleghi (titoli/ore eventi per supportare funzionalità che abiliti)</li>
+        </ul>
+        <p>Non raccogliamo dati sanitari sensibili o biometrici.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>4. Utilizzi dei Dati</strong></summary>
+        <ul>
+          <li>Fornire e migliorare funzionalità (attività, Pomodoro, statistiche, sincronizzazione)</li>
+          <li>Processare acquisti/sottoscrizioni via Apple</li>
+          <li>Gestire feedback/comunità e supporto</li>
+          <li>Mantenere sicurezza/prevenzione frodi, debuggare problemi</li>
+          <li>Conformità legale</li>
+          <li>Con consenso dove richiesto (es. notifiche o analitiche opzionali)</li>
+        </ul>
+        <p><strong>Basi legali (dove si applica GDPR/UK GDPR):</strong> esecuzione contratto, interessi legittimi, consenso, obbligo legale.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>5. Riepilogo Privacy App Store</strong></summary>
+        <p>A seconda del tuo utilizzo/impostazioni, l'App può raccogliere e collegare:</p>
+        <ul>
+          <li><strong>Info Contatto:</strong> email (supporto/feedback)</li>
+          <li><strong>Identificatori:</strong> IDFV, ID utente (anonimo)</li>
+          <li><strong>Acquisti:</strong> ID prodotto e stato</li>
+          <li><strong>Contenuto Utente:</strong> elementi che invii/sincronizzi (es. CloudKit, feedback)</li>
+          <li><strong>Dati Utilizzo:</strong> interazioni prodotto</li>
+          <li><strong>Diagnostica:</strong> crash/performance</li>
+        </ul>
+        <p><strong>Non collegati (dipendente dal contesto):</strong> posizione approssimativa per funzionalità di localizzazione/mappa.</p>
+        <p>Non vendiamo dati personali o facciamo tracciamento cross-app per pubblicità. Se qualsiasi attività si qualifica come "tracciamento", viene richiesta l'autorizzazione ATT.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>6. Condivisione/Divulgazione</strong></summary>
+        <ul>
+          <li><strong>Fornitori Servizi/Processori:</strong> Apple (CloudKit/StoreKit), Google Firebase (Firestore) e altri secondo necessità sotto contratto</li>
+          <li><strong>Legale/Protezione:</strong> per conformarsi alla legge, far rispettare i Termini, proteggere diritti/sicurezza</li>
+          <li><strong>Cambiamenti Aziendali:</strong> i dati possono trasferirsi a un successore in conformità con questa policy</li>
+          <li><strong>Con Consenso:</strong> per qualsiasi altro scopo dichiarato</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>7. CloudKit e il Tuo Controllo</strong></summary>
+        <p>La sincronizzazione CloudKit memorizza i dati dell'App sotto il tuo Apple ID nel tuo iCloud privato. Non possiamo accedere o eliminare quei dati per tuo conto. Gestiscili nelle impostazioni iOS/iCloud o disabilita la sincronizzazione nell'App.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>8. Conservazione</strong></summary>
+        <ul>
+          <li><strong>Feedback/analitiche:</strong> conservati solo per il tempo necessario e poi eliminati o anonimizzati</li>
+          <li><strong>Email supporto:</strong> conservate secondo necessità per supporto/conformità</li>
+          <li><strong>Dati App locali/iCloud:</strong> sotto il tuo controllo; puoi eliminarli dall'App o iCloud</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>9. Sicurezza</strong></summary>
+        <p>Utilizziamo salvaguardie ragionevoli (crittografia in transito, controlli accesso). Nessun metodo è sicuro al 100%. Agiamo prontamente se veniamo a conoscenza di un incidente di sicurezza, in conformità con la legge applicabile.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>10. Trasferimenti Internazionali</strong></summary>
+        <p>I dati possono essere processati fuori dal tuo paese. Dove richiesto (SEE/UK), utilizziamo Clausole Contrattuali Standard e misure supplementari.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>11. I Tuoi Diritti</strong></summary>
+        <ul>
+          <li><strong>SEE/UK/Svizzera:</strong> accesso, correzione, eliminazione, restrizione/obiezione, portabilità, revoca consenso; reclamo alla tua autorità</li>
+          <li><strong>California (CPRA):</strong> conoscere, eliminare, correggere, opt-out da "vendita"/"condivisione" (non vendiamo o condividiamo per pubblicità cross-contesto)</li>
+          <li><strong>Brasile (LGPD):</strong> diritti inclusi conferma, accesso, correzione, anonimizzazione, eliminazione</li>
+        </ul>
+        <p>Esercita contattando l'email sopra. Nota: i dati iCloud sono sotto il controllo del tuo Apple ID.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>12. Privacy dei Minori</strong></summary>
+        <p>L'App non è diretta a minori sotto i 13 anni (o sotto i 16 anni nel SEE/UK senza consenso genitoriale). Contattaci se ritieni che abbiamo raccolto dati da un minore.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>13. Permessi e Notifiche</strong></summary>
+        <p>iOS chiederà permesso per fotocamera, microfono, foto, posizione e notifiche quando richiesto. Puoi revocarli nelle Impostazioni.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>14. Modifiche</strong></summary>
+        <p>Potremmo aggiornare questa policy. Cambiamenti materiali saranno notificati in-App o con altri mezzi ragionevoli. L'uso continuato dopo la data di efficacia significa accettazione.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>15. Contatti</strong></summary>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a></li>
+          <li><strong>Indirizzo:</strong> Via Marino Venturi 33/1, Monte San Pietro (BO), Italia</li>
+        </ul>
+      </details>
     </div>
 
     <p class="muted">Torna a <a href="/">Home</a> o visita la pagina di <a href="/supporto">Supporto</a>.</p>
   </div>
   <script>
-    document.getElementById('date').textContent = new Date().toLocaleDateString('it-IT');
+    document.getElementById('date').textContent = '19 Agosto 2025';
   </script>
 </body>
 </html>

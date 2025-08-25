@@ -18,13 +18,20 @@
     h1 { margin-top:32px; }
     .muted { color:var(--muted); }
     .card { background:var(--card); border-radius:14px; padding:20px; margin-top:20px; }
+    details { margin:10px 0; }
+    details summary { cursor:pointer; padding:8px 0; font-weight:600; }
+    details summary:hover { color:var(--accent); }
+    details p, details ul { margin:12px 0; line-height:1.6; }
+    details h3 { margin:20px 0 10px; color:var(--accent); }
+    details ul { padding-left:20px; }
+    details li { margin:8px 0; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div style="display:flex; align-items:center; gap:10px;">
-        <img src="/assets/icon.png" alt="SnapTask" width="28" height="28" style="border-radius:8px; background:#ddd;">
+        <img src="../assets/icon.png" alt="SnapTask" width="28" height="28" style="border-radius:8px; background:#ddd;">
         <strong>SnapTask</strong>
       </div>
       <nav>
@@ -37,20 +44,181 @@
 
     <h1>Privacy Policy</h1>
     <p class="muted">Last updated: <span id="date"></span></p>
+    
     <div class="card">
+      <h2>Overview</h2>
       <p>SnapTask cares about your privacy. The app does not collect personal data without your consent.</p>
-      <h2>Data Collected</h2>
-      <p>Your tasks data stays on your device unless you explicitly enable platform features like iCloud backups.</p>
-      <h2>Analytics & Tracking</h2>
-      <p>We currently do not use third‑party tracking inside the app.</p>
-      <h2>Contact</h2>
-      <p>For privacy questions email <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a>.</p>
+      <p><strong>Effective Date:</strong> August 19, 2025</p>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>1. Who We Are</strong></summary>
+        <p><strong>Controller:</strong> Giovanni Sebastiano Amadei (individual developer)</p>
+        <p><strong>Address:</strong> Via Marino Venturi 33/1, Monte San Pietro (BO), Italy</p>
+        <p><strong>Email:</strong> <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a></p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>2. Scope</strong></summary>
+        <p>This policy covers information processed by SnapTask and related services. It does not cover third-party services we do not control (Apple, Google, etc.).</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>3. Data We Process</strong></summary>
+        <p>We minimize data collection.</p>
+        <h3>A. You Provide</h3>
+        <ul>
+          <li><strong>Support/Contact:</strong> your email and message when you write to us</li>
+          <li><strong>Feedback:</strong> optional name (if provided), feedback text, votes/likes, replies</li>
+          <li><strong>User Content in App:</strong> tasks, notes, photos, voice memos, and settings. Stored locally by default; when iCloud sync is enabled, data is in your private iCloud database under your Apple ID</li>
+        </ul>
+        <h3>B. Collected Automatically</h3>
+        <ul>
+          <li><strong>Device/Usage:</strong> device model, OS/app version, language, time zone, product interactions, and performance metrics</li>
+          <li><strong>Identifiers:</strong> IDFV and an anonymous in‑app ID for deduplication</li>
+          <li><strong>Diagnostics:</strong> crash/performance data</li>
+          <li><strong>Purchases:</strong> product identifiers and transaction status via StoreKit</li>
+          <li><strong>Approximate location:</strong> only if needed for localization/map features you use</li>
+        </ul>
+        <h3>C. From Integrations (Optional)</h3>
+        <ul>
+          <li><strong>CloudKit (Apple):</strong> sync of your data to your private iCloud</li>
+          <li><strong>StoreKit:</strong> purchases/subscriptions handling</li>
+          <li><strong>Firebase/Firestore (Google):</strong> feedback storage and limited internal analytics events</li>
+          <li><strong>Calendars:</strong> Apple/Google Calendar if you connect it (event titles/times to support features you enable)</li>
+        </ul>
+        <p>We do not collect sensitive health or biometric data.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>4. Uses of Data</strong></summary>
+        <ul>
+          <li>Provide and improve features (tasks, Pomodoro, statistics, sync)</li>
+          <li>Process purchases/subscriptions via Apple</li>
+          <li>Handle feedback/community and support</li>
+          <li>Maintain security/fraud prevention, debug issues</li>
+          <li>Legal compliance</li>
+          <li>With consent where required (e.g., notifications or optional analytics)</li>
+        </ul>
+        <p><strong>Legal bases (where GDPR/UK GDPR applies):</strong> performance of contract, legitimate interests, consent, legal obligation.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>5. App Store Privacy Summary</strong></summary>
+        <p>Depending on your usage/settings, the App may collect and link:</p>
+        <ul>
+          <li><strong>Contact Info:</strong> email (support/feedback)</li>
+          <li><strong>Identifiers:</strong> IDFV, user ID (anonymous)</li>
+          <li><strong>Purchases:</strong> product IDs and status</li>
+          <li><strong>User Content:</strong> items you submit/sync (e.g., CloudKit, feedback)</li>
+          <li><strong>Usage Data:</strong> product interactions</li>
+          <li><strong>Diagnostics:</strong> crashes/performance</li>
+        </ul>
+        <p><strong>Not linked (context‑dependent):</strong> approximate location for localization/map features.</p>
+        <p>We do not sell personal data or engage in cross‑app tracking for advertising. If any activity qualifies as "tracking", ATT permission is requested.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>6. Sharing/Disclosure</strong></summary>
+        <ul>
+          <li><strong>Service Providers/Processors:</strong> Apple (CloudKit/StoreKit), Google Firebase (Firestore), and others as needed under contract</li>
+          <li><strong>Legal/Protection:</strong> to comply with law, enforce Terms, protect rights/safety</li>
+          <li><strong>Business Changes:</strong> data may transfer to a successor in compliance with this policy</li>
+          <li><strong>With Consent:</strong> for any other stated purpose</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>7. CloudKit and Your Control</strong></summary>
+        <p>CloudKit sync stores App data under your Apple ID in your private iCloud. We cannot access or delete that data on your behalf. Manage it in iOS/iCloud settings or disable sync in the App.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>8. Retention</strong></summary>
+        <ul>
+          <li><strong>Feedback/analytics:</strong> retained only as long as needed and then deleted or anonymized</li>
+          <li><strong>Support emails:</strong> retained as needed for support/compliance</li>
+          <li><strong>Local/iCloud App data:</strong> under your control; you can delete it from the App or iCloud</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>9. Security</strong></summary>
+        <p>We use reasonable safeguards (encryption in transit, access controls). No method is 100% secure. We act promptly if we learn of a security incident, consistent with applicable law.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>10. International Transfers</strong></summary>
+        <p>Data may be processed outside your country. Where required (EEA/UK), we use Standard Contractual Clauses and supplemental measures.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>11. Your Rights</strong></summary>
+        <ul>
+          <li><strong>EEA/UK/Switzerland:</strong> access, correction, deletion, restriction/objection, portability, withdraw consent; complaint to your authority</li>
+          <li><strong>California (CPRA):</strong> know, delete, correct, opt‑out of "sale"/"sharing" (we don't sell or share for cross‑context ads)</li>
+          <li><strong>Brazil (LGPD):</strong> rights including confirmation, access, correction, anonymization, deletion</li>
+        </ul>
+        <p>Exercise by contacting the email above. Note: iCloud data is under your Apple ID control.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>12. Children's Privacy</strong></summary>
+        <p>The App is not directed to children under 13 (or under 16 in EEA/UK without parental consent). Contact us if you believe we collected data from a child.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>13. Permissions and Notifications</strong></summary>
+        <p>iOS will ask permission for camera, microphone, photos, location, and notifications when required. You can revoke in Settings.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>14. Changes</strong></summary>
+        <p>We may update this policy. Material changes will be notified in‑App or by other reasonable means. Continued use after the effective date means acceptance.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary><strong>15. Contact</strong></summary>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:giovannisebastianoamadei@gmail.com">giovannisebastianoamadei@gmail.com</a></li>
+          <li><strong>Address:</strong> Via Marino Venturi 33/1, Monte San Pietro (BO), Italy</li>
+        </ul>
+      </details>
     </div>
 
     <p class="muted">Back to <a href="/en/">Home</a> or visit <a href="/en/support">Support</a>.</p>
   </div>
   <script>
-    document.getElementById('date').textContent = new Date().toLocaleDateString('en-US');
+    document.getElementById('date').textContent = 'August 19, 2025';
   </script>
 </body>
 </html>
