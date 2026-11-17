@@ -1,6 +1,6 @@
 """Rebuild privacy and terms pages (IT + EN) from the SnapTask app's legal texts.
 
-Usage: python3 tools/build_legal_pages.py <path to SnapTask/SnapTask/Legal>
+Usage: python3 tools/build_legal_pages.py <folder, e.g. tools/legal-both, with PrivacyPolicy.{it,en}.md and TermsOfService.{it,en}.md>
 The pages keep the head, style and nav of the current privacy.html / en/privacy.html.
 """
 import sys,re,html,os,textwrap
@@ -13,9 +13,9 @@ def swift_text(name):
 tmpl={'it':open(site+'/privacy.html',encoding='utf-8').read(),'en':open(site+'/en/privacy.html',encoding='utf-8').read()}
 CFG={
  ('it','privacy'):dict(src=legal+'/PrivacyPolicy.it.md',out='privacy.html',title='Informativa sulla Privacy',desc="Informativa sulla privacy per l'app SnapTask.",self='/privacy',other='/en/privacy'),
- ('en','privacy'):dict(text=swift_text('privacyPolicyEN'),out='en/privacy.html',title='Privacy Policy',desc='Privacy policy for the SnapTask app.',self='/en/privacy',other='/privacy'),
+ ('en','privacy'):dict(src=legal+'/PrivacyPolicy.en.md',out='en/privacy.html',title='Privacy Policy',desc='Privacy policy for the SnapTask app.',self='/en/privacy',other='/privacy'),
  ('it','terms'):dict(src=legal+'/TermsOfService.it.md',out='termini.html',title='Termini di servizio',desc="Termini di servizio dell'app SnapTask.",self='/termini',other='/en/terms'),
- ('en','terms'):dict(text=swift_text('termsOfServiceEN'),out='en/terms.html',title='Terms of Service',desc='Terms of service for the SnapTask app.',self='/en/terms',other='/termini'),
+ ('en','terms'):dict(src=legal+'/TermsOfService.en.md',out='en/terms.html',title='Terms of Service',desc='Terms of service for the SnapTask app.',self='/en/terms',other='/termini'),
 }
 L={'it':dict(updated='Ultimo aggiornamento',effective='Data di entrata in vigore',back='Torna a <a href="/">Home</a> o visita le pagine <a href="/supporto">Supporto</a>, <a href="/privacy">Privacy</a> e <a href="/termini">Termini</a>.'),
    'en':dict(updated='Last updated',effective='Effective date',back='Back to <a href="/en/">Home</a>, or see <a href="/en/support">Support</a>, <a href="/en/privacy">Privacy</a> and <a href="/en/terms">Terms</a>.')}
